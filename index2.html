@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Grid Basics #2</title>
+	<style>
+			.wrapper {
+				display: grid;
+				/* using fractions is recommended rather than % or pixels */
+				/* grid-template-columns: 1fr 1fr 1fr; */
+				/* grid-template-columns: repeat(4, 1fr 2fr); */
+				grid-template-columns: repeat(3, 1fr);
+				grid-gap: 1em;
+			}
+
+			.wrapper > div {
+				background: #eee;
+				padding: 1em;
+			}
+
+			.wrapper > div:nth-child(odd){
+					background: #ddd;
+				}
+	</style>
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="">
+			Lorem ipsum dolor sit.
+		</div>
+		<div class="">
+			Lorem ipsum dolor sit.
+		</div>
+		<div class="">
+			Lorem ipsum dolor sit.
+		</div>
+		<div class="">
+			Lorem ipsum dolor sit.
+		</div>
+		<div class="">
+			Lorem ipsum dolor sit.
+		</div>
+		<div class="">
+			Lorem ipsum dolor sit.
+		</div>
+		<div class="">
+			Lorem ipsum dolor sit.
+		</div>
+		<div class="">
+			Lorem ipsum dolor sit.
+		</div>
+	</div>
+
+</body>
+</html>
