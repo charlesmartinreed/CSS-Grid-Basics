@@ -1,5 +1,10 @@
 .wrapper {
 	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-auto-rows: minmax(100px, auto);
+	grid-gap: 1em;
+	justify-items: stretch; /* default is stretch */
+	align-items: stretch; /* default is stretch */
 }
 
 .wrapper > div {
@@ -9,4 +14,28 @@
 
 .wrapper > div:nth-child(odd){
 		background: #ddd;
-	}
+}
+
+.box1 {
+	grid-column: 1/3; /* hard to explain this verbally, but think of each side of an item as being part of a count. So, this box should go from it's end, 1, to the end of the other item, sides 2 and 3. */
+	grid-row: 1/3;
+	/* align-self: start; */
+}
+
+.box2 {
+	/* align-self: end; */
+	grid-column: 3;
+	grid-row: 1/3;
+}
+
+.box3 {
+	grid-column: 2/4; /* now starts at 2 instead of 1, pushing 3 into its old position*/
+	grid-row: 3;
+	/* justify-self: end; */
+}
+
+.box4 {
+	border: 1px solid #333;
+	grid-column: 1;
+	grid-row: 2/4; /* now overlapping box 1*/
+}
