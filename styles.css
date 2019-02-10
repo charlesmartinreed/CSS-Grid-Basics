@@ -7,17 +7,19 @@
 	display: grid;
 	/* auto is used to shrink size to fit content precisely */
 	/* fr can be used to break the viewport into fractions - 1fr 1fr means two columns, each taking up 1/2 of the available space */
-	grid-template-columns: 1fr 500px 500px 1fr;
+	grid-template-columns: 1fr 1fr;
 
 	/* grid-template-rows: 1fr 1fr 1fr 1fr; */
 
 	/* you can layout your grid using a sort of visual language */
 	/* . means whitespace occupies that row/grid */
 	grid-template-areas:
-	". title title ."
-	". header header ."
-	". sidebar content ."
-	". footer footer .";
+	"title title"
+	"header header"
+	"sidebar sidebar"
+	"content content"
+	"footer footer";
+	grid-gap: 10px;
 }
 
 /* .title { */
@@ -40,6 +42,11 @@
 }
 .content {
 	grid-area: content;
+	/* display: grid; grids can exist within grids*/
+	/* position individual items with justify-self on the X, align-self on the Y-axis */
+	/* justify-self: center;
+	-ms-flex-item-align: center;
+	    align-self: center; */
 }
 .footer {
 	grid-area: footer;
@@ -51,4 +58,26 @@
 
 .grid div:nth-child(odd) {
 	background-color: green;
+}
+
+@media screen and (min-width: 736px) {
+	/* anything larger than 736px */
+	.grid {
+		display: grid;
+		/* auto is used to shrink size to fit content precisely */
+		/* fr can be used to break the viewport into fractions - 1fr 1fr means two columns, each taking up 1/2 of the available space */
+		grid-template-columns: 1fr 500px 500px 1fr;
+
+		/* grid-template-rows: 1fr 1fr 1fr 1fr; */
+
+		/* you can layout your grid using a sort of visual language */
+		/* . means whitespace occupies that row/grid */
+		grid-template-areas:
+		". title title ."
+		". header header ."
+		". sidebar content ."
+		". footer footer .";
+		grid-gap: 10px;
+	}
+
 }
