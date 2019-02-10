@@ -5,7 +5,44 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	/* auto is used to shrink size to fit content precisely */
+	/* fr can be used to break the viewport into fractions - 1fr 1fr means two columns, each taking up 1/2 of the available space */
+	grid-template-columns: 1fr 500px 500px 1fr;
+
+	/* grid-template-rows: 1fr 1fr 1fr 1fr; */
+
+	/* you can layout your grid using a sort of visual language */
+	/* . means whitespace occupies that row/grid */
+	grid-template-areas:
+	". title title ."
+	". header header ."
+	". sidebar content ."
+	". footer footer .";
+}
+
+/* .title { */
+	/* grid-column: span 1; */
+	/* grid-column: 1/3; */
+	/* grid-column-start: 1;
+	grid-column-end; 3; */
+
+	/* grid-row-end: span 2; */
+
+/* } */
+.title {
+	grid-area: title;
+}
+.header {
+	grid-area: header;
+}
+.sidebar {
+	grid-area: sidebar;
+}
+.content {
+	grid-area: content;
+}
+.footer {
+	grid-area: footer;
 }
 
 .grid div:nth-child(even) {
