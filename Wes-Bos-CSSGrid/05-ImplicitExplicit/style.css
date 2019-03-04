@@ -71,40 +71,19 @@ h6 {
 .container {
 	display: grid;
 	grid-gap: 20px;
-	grid-template-columns: 1fr 10fr 1fr;
-	grid-template-rows: 150px 150px 150px;
-
-	/* setting up grid areas */
-	/* using a . instead of the explicit area name creates a blank space */
 	grid-template-areas:
-	"sidebar-1 content sidebar-2"
-	"sidebar-1 content sidebar-2"
-	"footer footer footer"
-}
-
-.item1 {
-	grid-area: sidebar-1;
-}
-
-.item2 {
-	grid-area: content;
+		"💩 💩 💩 💩 🍔 🍔 🍔 🍔"
+		"💩 💩 💩 💩 🍔 🍔 🍔 🍔"
+		"💩 💩 💩 💩 🍔 🍔 🍔 🍔"
+		"💩 💩 💩 💩 🍔 🍔 🍔 🍔"
 }
 
 .item3 {
-	grid-area: sidebar-2;
-}
+	/* now this is cool - we can cover the entire area for defined area on the grid by simply doing the following */
+	/* grid-area: 💩; */
 
-.footer {
-	/* assigning to the grid area */
-	grid-area: footer;
-}
+	/* you can also use area names when setting spans for col/row */
+	grid-column: 💩-start / 🍔-end;
+	grid-row-end: 💩-end;
 
-/* template areas with media queries */
-@media (max-width: 700px) {
-	.container {
-		grid-template-areas:
-		"content content content"
-		"sidebar-1 sidebar-1 sidebar-2"
-		"footer footer footer"
-	}
 }
