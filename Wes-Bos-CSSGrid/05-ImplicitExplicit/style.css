@@ -73,14 +73,15 @@ h6 {
 	grid-gap: 20px;
 	border: 10px solid var(--yellow);
 
-	/* auto-fill tells the browser to figure out how many columns will fit with the given size */
+	/* autofill/autofit and minmax can be used to help create responsive sites in a similar manner to media queries */
+	/* instead of setting hard values, we can set the minimum/maximum size our cols/rows can use when resizing*/
+	/* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
 
-	grid-template-columns: repeat(auto-fill, 150px);
+	/* autofit allows our elements to take up the total space of our grid container as we resize, in the example below */
+	/* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
 
-	grid-template-columns: repeat(auto-fit, 150px);
-}
+	/* fit function */
+	/* fit-content has a clamp value, the max value it will be sized to during resizing */
+	grid-template-columns: fit-content(100px) 150px 150px 150px;
 
-.item4 {
-	/* notice the difference in position when using auto-fill vs. auto-fit */
-	grid-column-end: -1;
 }
