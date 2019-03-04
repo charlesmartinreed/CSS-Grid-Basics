@@ -72,16 +72,29 @@ h6 {
 	display: grid;
 	grid-gap: 20px;
 	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
 }
 
-/* what if we want to size individual items? */
-
-/* in CSS Grid, we use spanning to dictate how many colums/rows a grid item should take up  */
-.item9 {
-	background: mistyrose;
+.item-poop {
 	/* grid-column: span 2; */
-	grid-row: span 2;
+	/* grid-column is shorthand for grid-column-start, grid-column-auto */
 
-	/* what if you want to span more than explicit col/row length? CSS creates implicit cols/rows */
-	grid-column: span 10;
+	/* grid-column-start: 2; */
+	/* grid-column-end: 5; */
+
+	/* grid-column: 2 / 5; */
+	/* grid-column: span 2 / 5; */
+
+	/* we can also set a start position and span length */
+	/* grid-column: 1 / span 2; */
+
+	/* don't know how many tracks you have? -1 can be used to target the last */
+	/* 1 / -1 can be used to span the entire width */
+	grid-column: 1 / span 3;
+	/* grid-row: 3 / span 3; */
+
+	grid-row: 1 / -1;
+
+
+	background: #BADA55;
 }
