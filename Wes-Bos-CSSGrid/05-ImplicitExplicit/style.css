@@ -71,12 +71,17 @@ h6 {
 .container {
 	display: grid;
 	grid-gap: 20px;
-	/* repeat takes two args, number of repeats, the command to repeat */
-	/* grid-template-columns: repeat(4, 1fr); */
+	grid-template-columns: repeat(5, 1fr);
+}
 
-	/* alternating between 1fr and 2fr, 4 times */
-	grid-template-columns: repeat(4, 1fr 2fr);
+/* what if we want to size individual items? */
 
-	/* you can also nest the repeat() */
-	grid-template-columns: 100px repeat(2, 1fr auto) 200px;
+/* in CSS Grid, we use spanning to dictate how many colums/rows a grid item should take up  */
+.item9 {
+	background: mistyrose;
+	/* grid-column: span 2; */
+	grid-row: span 2;
+
+	/* what if you want to span more than explicit col/row length? CSS creates implicit cols/rows */
+	grid-column: span 10;
 }
