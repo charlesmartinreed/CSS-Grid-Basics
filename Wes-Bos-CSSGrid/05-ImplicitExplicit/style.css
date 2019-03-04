@@ -70,11 +70,22 @@ h6 {
 
 .container {
 	display: grid;
+	height: 600px;
 	grid-gap: 20px;
-	grid-template-columns: 400px 200px;
-	/* grid-auto-flow will determine whether the extra will be placed horizontally or vertically, column or row */
-	grid-auto-flow: column;
+	border: 10px solid var(--yellow);
+	/* when using perecentages, padding is not taken into account */
+	/* grid-template-columns: 25% 25% 25% 25%; */
 
-	/* any columns that have been implictly created will be 200px */
-	grid-auto-columns: 200px;
+	/* however, with fractions, it is */
+	/* fractions represent THE AMOUNT OF SPACE LEFT AFTER LAYOUT IS COMPLETE */
+	/* similarly to flex-grow, it can be used be used as a multiplier */
+	/* grid-template-columns: 200px 2fr 1fr; */
+	/* grid-template-columns: repeat(4, 1fr); */
+
+	/* when we add a height to our container, this works */
+	/* grid-template-rows: 1fr 10fr 1fr 1fr; */
+
+	/* auto, as a sizing keyword for our grids, adjust to the max size needed by the content */
+	/* note how the widest element in a column decides the width of those columns */
+	grid-template-columns: auto 1fr auto 1fr;
 }
