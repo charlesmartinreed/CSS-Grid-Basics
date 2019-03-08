@@ -5,39 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Flexbox vs CSS Grid: Flex on Item!</title>
+  <title>Flexbox vs CSS Grid: Perfectly Centered!</title>
 </head>
 
 <body>
-  <!-- The Longer Item in the middle -->
-  <div class="controls">
-    <button>⏯️</button>
-    <button>🐢</button>
-    <button>🐰</button>
-    <div class="scrubber"></div>
-    <button>💬</button>
-    <button>🔽</button>
+  <!-- Perfectly Centered Multiple Elements -->
+
+  <div class="hero">
+    <h2>Something Big Is Coming</h2>
+    <p>Get Ready...</p>
   </div>
 
   <style>
-    .controls {
-      margin: 200px 0;
-			/* display: flex; */
-			/* align-items: center; */
-			display: grid;
-			grid-template-columns: auto auto auto 1fr auto auto;
+    .hero {
+      height: 400px;
+      background: rgba(255, 255, 255, 0.2);
+			/* display: flex;
+			flex-direction: column;
 			align-items: center;
-    }
+			justify-content: center; */
 
-    .scrubber {
-      background: #BADA55;
-      height: 10px;
-      min-width: 100px;
-      border-radius: 10px;
-			/* flex: 1; */
+			display: grid;
+			justify-items: center;
+			align-content: center;
     }
   </style>
-
 </body>
 
 </html>
