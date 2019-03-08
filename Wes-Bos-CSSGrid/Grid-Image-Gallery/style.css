@@ -120,7 +120,7 @@ p {
 .overlay.open {
 	display: grid;
 	align-items: center;
-	justify-items: center;
+	justify-items: center;3
 }
 
 .overlay-inner {
