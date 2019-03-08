@@ -5,29 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Flexbox vs CSS Grid: Perfectly Centered!</title>
+  <title>Flexbox vs CSS Grid: Self Control!</title>
 </head>
 
 <body>
-  <!-- Perfectly Centered Multiple Elements -->
+  <!-- Self Contol on box Axis -->
 
-  <div class="hero">
-    <h2>Something Big Is Coming</h2>
-    <p>Get Ready...</p>
+  <div class="corners">
+    <div class="corner item">1</div>
+    <div class="corner item">TWO</div>
+    <div class="corner item">3</div>
+    <div class="corner item">4</div>
   </div>
 
   <style>
-    .hero {
-      height: 400px;
-      background: rgba(255, 255, 255, 0.2);
-			/* display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center; */
+    .corners {
+      display: grid;
+      height: 200px;
+      width: 200px;
+      border: 10px solid var(--yellow);
+			/* grid-template-columns: 1fr 1fr;
+			grid-template-areas: 1fr 1fr; */
+			grid-template: 1fr 1fr / 1fr 1fr;
+			align-items: end;
+			justify-items: end;
+    }
 
-			display: grid;
-			justify-items: center;
-			align-content: center;
+	/* note how the self designations override the align and justify set in the container above */
+    .corner:nth-child(1),
+    .corner:nth-child(2) {
+			align-self: start;
+    }
+
+    .corner:nth-child(1),
+    .corner:nth-child(3) {
+			justify-self: start;
     }
   </style>
 </body>
