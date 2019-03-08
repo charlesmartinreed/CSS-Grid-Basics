@@ -24,7 +24,7 @@ function generateHTML([h, v]) {
 	// Array.from can take a length property
 	// map the generated numbers in the array
 	const digits = Array.from({length: 50}, () =>
-	[generateRandomNumber(4), generateRandomNumber(4)]);
+	[generateRandomNumber(4), generateRandomNumber(4)]).concat([[1,1], [1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1]]);
 	console.log(digits);
 
 	// for each index, the values are passed into generateHTML

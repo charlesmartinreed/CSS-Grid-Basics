@@ -27,9 +27,83 @@ p {
 	border: 0;
 }
 
-.gallery {}
+.gallery {
+	display: grid;
+	/* we don't know how much will fit, so we use auto-fill and set a size for a col size for 100px each */
+	grid-template-columns: repeat(auto-fill, 100px);
+	grid-auto-rows: 100px;
 
+	/* fill in the blanks */
+	grid-auto-flow: dense;
+}
 
+/* item sizing */
+.item {
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1;
+	grid-template-rows: 1;
+}
+
+.item img {
+	/* resize and stretch images */
+	grid-column: 1 / -1;
+	grid-row: 1 / -1;
+	width: 100%;
+	height: 100%;
+
+	/* fit those resized images into the grid  */
+	/* object-fit trims to show as much of image as possible in container */
+	object-fit: cover;
+}
+
+.item__overlay {
+	/* RRBBGG and 32 is hex for 70% */
+	background: #FFC60032;
+	grid-column: 1 / -1;
+	grid-row: 1 / -1;
+	position: relative;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+
+	/* button begins just off the actual item */
+	transition: 0.2s;
+	transform: translateY(100%);
+}
+
+.item:hover .item__overlay {
+	transform: translateY(0);
+}
+
+.item__overlay button {
+	background: none;
+	border: 2px solid white;
+	color: white;
+	text-transform: uppercase;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 5px;
+}
+
+.item.v2 {
+	grid-row: span 2;
+}
+.item.v3 {
+	grid-row: span 3;
+}
+.item.v4 {
+	grid-row: span 4;
+}
+
+.item.h2 {
+	grid-column: span 2;
+}
+.item.h3 {
+	grid-column: span 3;
+}
+.item.h4 {
+	grid-column: span 4;
+}
 
 .overlay {
 	position: fixed;
