@@ -5,41 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Flexbox vs CSS Grid: Self Control!</title>
+  <title>Flexbox vs CSS Grid: Stacked Layout!</title>
 </head>
 
 <body>
-  <!-- Self Contol on box Axis -->
-
-  <div class="corners">
-    <div class="corner item">1</div>
-    <div class="corner item">TWO</div>
-    <div class="corner item">3</div>
-    <div class="corner item">4</div>
+  <!-- Stacked Layout -->
+  <div class="stacked">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
   </div>
 
   <style>
-    .corners {
-      display: grid;
-      height: 200px;
-      width: 200px;
-      border: 10px solid var(--yellow);
-			/* grid-template-columns: 1fr 1fr;
-			grid-template-areas: 1fr 1fr; */
-			grid-template: 1fr 1fr / 1fr 1fr;
-			align-items: end;
-			justify-items: end;
+    .stacked {
+    	display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
     }
 
-	/* note how the self designations override the align and justify set in the container above */
-    .corner:nth-child(1),
-    .corner:nth-child(2) {
-			align-self: start;
-    }
-
-    .corner:nth-child(1),
-    .corner:nth-child(3) {
-			justify-self: start;
+    .stacked>* {
+      width: 30%;
+      margin-bottom: 20px;
     }
   </style>
 </body>
