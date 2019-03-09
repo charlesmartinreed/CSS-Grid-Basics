@@ -12,6 +12,13 @@ img {
   max-width: 100%;
 }
 
+/* wrapper margin fix */
+.wrapper {
+	display: grid;
+	/* instead of putting margin on every little thing */
+	grid-gap: 20px;
+}
+
 .top {
 	display: grid;
 	grid-gap: 20px;
@@ -76,8 +83,7 @@ img {
 .menu ul {
 	display: grid;
 	grid-gap: 10px;
-	margin: 20px 0;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
 	padding: 0;
 	list-style: none;
 }
@@ -119,4 +125,45 @@ img {
 
 .feature p {
 	color: rgba(0, 0, 0, 0.5);
+}
+
+/* ABOUT SECTION */
+.about {
+	background: white;
+	padding: 50px;
+	display: grid;
+	grid-template-columns: 400px 1fr;
+	align-items: center;
+}
+
+/* GRAM SECTION */
+.gallery {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery h2 {
+	grid-column: 1 / -1;
+	display: grid;
+
+	grid-template-columns: 1fr auto 1fr;
+	grid-gap: 20px;
+	align-items: center;
+}
+
+.gallery h2:before, .gallery h2:after {
+	display: block;
+	content: '';
+	height: 10px;
+	background: linear-gradient(to var(--direction, left), var(--yellow), transparent);
+}
+
+.gallery h2:after {
+	/* background: linear-gradient(to var(--direction, right), var(--yellow), transparent); */
+	--direction: right;
+}
+
+.gallery img {
+	width: 100%;
 }
