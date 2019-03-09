@@ -20,6 +20,7 @@ img {
 		"hero hero cta2"
 }
 
+/* HERO GRID STYLING */
 .hero {
 	grid-area: hero;
 	min-height: 400px;
@@ -69,4 +70,53 @@ img {
 .price {
 	font-size: 60px;
 	font-weight: 300;
+}
+
+/* MENU GRID STYLING */
+.menu ul {
+	display: grid;
+	grid-gap: 10px;
+	margin: 20px 0;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	padding: 0;
+	list-style: none;
+}
+
+.menu a {
+	background: var(--yellow);
+	display: block;
+	text-decoration: none;
+	padding: 10px;
+	text-align: center;
+	color: var(--black);
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+/* using CSS attribute selector, we'll display it again when hitting the small screen breakpoint */
+[aria-controls="menu-list"] {
+	display: none;
+}
+
+/* FEATURES STYLING */
+.features {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature {
+	background: white;
+	padding: 10px;
+	border: 1px solid white;
+	text-align: center;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature .icon {
+	font-size: 50px;
+}
+
+.feature p {
+	color: rgba(0, 0, 0, 0.5);
 }
